@@ -1,13 +1,98 @@
 body {
-  margin: 0;
+  margin: 0px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(270deg, #08c8b8, #089cc8);
+  background-size: 100% 100%;
+
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.monedas{
+  width:150px;
+  height:30px;
+  border-radius: 6px;
+  font-size: 15px;
+  text-align: center;
 }
+
+.header{
+  width: 100%;
+  vertical-align: auto;
+  background-color: white;
+  height: 80px;
+  box-shadow: 0px 0px 5px 0px;
+  
+}
+
+.header img{
+  height: 60px;
+  position:inherit;
+  padding: 5px;
+  display:block;
+}
+
+.header p{
+  
+  position:inherit;
+  float: right;
+  font-style:italic;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.titulo{
+
+  color: rgb(226, 64, 86);
+  font-family:'Gill Sans';
+  font-size:35px;
+  flex-direction: row-reverse;
+}
+
+.formulario{
+  color: rgb(255, 255, 255);
+  padding: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: auto;
+  vertical-align:center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: flexbox;
+}
+
+.card{
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 5%;
+  position: relative;
+  display: flexbox;
+  padding:0px;
+  background-color: rgb(231, 231, 231);
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  width:100%;
+}
+
+.card-body{
+  width: auto;
+  
+}
+
+.contenedor{
+  background-color: white;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
