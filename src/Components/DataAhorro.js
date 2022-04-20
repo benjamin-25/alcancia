@@ -1,9 +1,7 @@
 import React from 'react'
 
- const DataAhorro = ({cantidad, acumulado,CMonedas,monedas}) => {
+const DataAhorro = ({cantidad, acumulado,CMonedas,monedas}) => {
   
-
-
   return (
     <div>
       <div className='card'>

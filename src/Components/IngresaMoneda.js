@@ -76,7 +76,8 @@ const IngresaMoneda = () => {
 
             setAcumAhorro(ahorrado);
             setcantidad(cantidad+1);
-
+            
+            // validacion de los tipos de monedas para sus contadores 
             if(numeros===50){
                 setcincuenta(cincuenta+1);
             }
