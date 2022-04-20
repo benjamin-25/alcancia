@@ -34,7 +34,28 @@ import React from 'react'
                   {
                     monedas.map((val,i)=>(
                 
-                      <li key={val}>Cantidad {val}: {CMonedas[i]}</li>
+                      <li key={val}>Monedas de {val}: {CMonedas[i]} monedas.</li>
+                    ))           
+                  }                
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='card'>
+          <div className='card-body'>
+            <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#Cantidadcollapse" aria-expanded="false" aria-controls="Cantidadcollapse">
+              Detalle Cantidad por Monedas
+            </button>
+          
+            <div className="collapse" id="Cantidadcollapse">
+              <div className="contenedor">
+                <ul>
+                  {
+                    monedas.map((val,i)=>(
+                
+                      <li key={val}>Dinero en Monedas de {val}: {val*CMonedas[i]} pesos.</li>
                     ))           
                   }                
                 </ul>

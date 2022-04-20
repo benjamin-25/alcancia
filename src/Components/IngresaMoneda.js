@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import '../index.css';
 import DataAhorro from './DataAhorro';
 
@@ -8,8 +8,8 @@ const IngresaMoneda = () => {
   
     const monedas =[50,100,200,500,1000];
     
-    const [numeros, setnumeros] = useState();
-    
+    const [numeros, setnumeros] = useState(0);
+    const [value, setvalue] =useState(0);
     const [ahorrado, setahorrado] = useState(0);
     const [cantidad, setcantidad] = useState(0);
     const [AcumAhorro, setAcumAhorro] = useState(0);
@@ -26,14 +26,15 @@ const IngresaMoneda = () => {
 
         e.preventDefault();
         let numero=parseInt(e.target.value);
-
-        if(e.target.value===''){
+        
+        if(numero===0){
             alert('Seleccione una moneda');
         }
         
         else{
-            
+            // controlar el numero ingresado y manejar las cantidades de este
             setnumeros(numero);
+            // acumulador sumatoria total
             setahorrado(ahorrado+numero);
             
         }
@@ -45,25 +46,35 @@ const IngresaMoneda = () => {
     const onEnvia=(e)=>{
 
         e.preventDefault();
-                
-        setAcumAhorro(ahorrado)
-        setcantidad(cantidad+1);
+        console.log(numeros);
+        
+        if(numeros===0){
+            alert('Seleccione una moneda');
+        }
+        
+        else{
 
-        if(numeros===50){
-            setcincuenta(cincuenta+1);
+            setAcumAhorro(ahorrado);
+            setcantidad(cantidad+1);
+
+            if(numeros===50){
+                setcincuenta(cincuenta+1);
+            }
+            else if(numeros===100){
+                setcien(cien+1);
+            }
+            else if(numeros === 200){
+                setdocientos(docientos+1);
+            }
+            else if(numeros === 500){
+                setquinientos(quinientos+1);
+            }
+            else if(numeros===1000){
+                setmil(mil+1);
+            }
+
         }
-        else if(numeros===100){
-            setcien(cien+1);
-        }
-        else if(numeros === 200){
-            setdocientos(docientos+1);
-        }
-        else if(numeros === 500){
-            setquinientos(quinientos+1);
-        }
-        else if(numeros===1000){
-            setmil(mil+1);
-        }
+        setnumeros(0);
                                
     }
                        
@@ -73,19 +84,19 @@ const IngresaMoneda = () => {
     return (
     <Fragment>
         
-        <form className='formulario' >
+        <form className='formulario' onSubmit={onEnvia}>
             <label className='form-label'>Selecciona Moneda para ahorro: </label>
             <div className='row'>
                 <div className='col sm'>
-                <select className='form-select' onChange={onEventChange} required>
-                    <option key='0' value={0}></option>
+                <select value={numeros} className='form-select' onChange={onEventChange}>
+                    <option key='0'>selecciona</option>
                     {
                         monedas.map(money=>(<option key={money} value={money}>{money}</option>))
                     }
                 </select>
                 </div>
                 <div className='col'>
-                    <button className='btn btn-success' onClick={onEnvia}>Ahorrar</button>
+                    <button type='submit' className='btn btn-success'>Ahorrar</button>
                 </div>
             </div>
             
