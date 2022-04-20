@@ -15,7 +15,7 @@ const IngresaMoneda = () => {
     const [cantidad, setcantidad] = useState(0);
     const [AcumAhorro, setAcumAhorro] = useState(0);
     
-    
+    // contadores manejados por estados
     const [cincuenta, setcincuenta] = useState(0);
     const [cien, setcien] = useState(0);
     const [docientos, setdocientos] = useState(0);
@@ -35,7 +35,7 @@ const IngresaMoneda = () => {
                     title:'Error!',
                     text:'Por Favor Seleccione una Moneda',
                     icon:'error',
-                    button:'Aceptar',
+                    button:'Aceptar'
                     
                 }
             );
@@ -44,7 +44,7 @@ const IngresaMoneda = () => {
         else{
             // controlar el numero ingresado y manejar las cantidades de este
             setnumeros(numero);
-            // acumulador sumatoria total
+            // captura valor al momento de ser seleccionado
             setahorrado(ahorrado+numero);
             
         }
@@ -65,7 +65,7 @@ const IngresaMoneda = () => {
                     title:'Error!',
                     text:'Por Favor Seleccione una Moneda',
                     icon:'error',
-                    button:'Aceptar',
+                    button:'Aceptar'
                     
                 }
             );
@@ -74,8 +74,20 @@ const IngresaMoneda = () => {
         
         else{
 
+            // acumulador sumatoria total
             setAcumAhorro(ahorrado);
             setcantidad(cantidad+1);
+
+            swal(
+                {
+                    title:'Exitoso!',
+                    text:`Moneda de ${numeros} Ingresada a la Alcancia.`,
+                    icon:'success',
+                    button:'Aceptar',
+                    timer:'1700'
+                    
+                }
+            );
             
             // validacion de los tipos de monedas para sus contadores 
             if(numeros===50){
