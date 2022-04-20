@@ -1,8 +1,8 @@
 import React from 'react'
 
- const DataAhorro = ({cantidad, acumulado,CMonedas}) => {
+ const DataAhorro = ({cantidad, acumulado,CMonedas,monedas}) => {
   
-  const [cincuenta,cien,dociento,quiniento,mil] = CMonedas;
+
 
   return (
     <div>
@@ -31,11 +31,12 @@ import React from 'react'
             <div className="collapse" id="Monedacollapse">
               <div className="contenedor">
                 <ul>
-                  <li>Cantidad 50: {cincuenta}</li>
-                  <li>Cantidad 100: {cien}</li>
-                  <li>Cantidad 200: {dociento}</li>
-                  <li>Cantidad 500: {quiniento}</li>
-                  <li>Cantidad 1000: {mil}</li>
+                  {
+                    monedas.map((val,i)=>(
+                
+                      <li key={val}>Cantidad {val}: {CMonedas[i]}</li>
+                    ))           
+                  }                
                 </ul>
             </div>
           </div>

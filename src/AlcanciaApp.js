@@ -6,8 +6,7 @@ import IngresaMoneda from './Components/IngresaMoneda';
 
 const AlcanciaApp = () => {
 
-    const [ahorro, setAhorro] = useState(0)
-  
+      
     return (
         <Fragment>
             <div className='header'>

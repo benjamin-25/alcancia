@@ -27,7 +27,7 @@ const IngresaMoneda = () => {
         e.preventDefault();
         let numero=parseInt(e.target.value);
 
-        if(e.target.value==='...'){
+        if(e.target.value===''){
             alert('Seleccione una moneda');
         }
         
@@ -35,7 +35,7 @@ const IngresaMoneda = () => {
             
             setnumeros(numero);
             setahorrado(ahorrado+numero);
-            console.log(numero)
+            
         }
         
         
@@ -45,33 +45,26 @@ const IngresaMoneda = () => {
     const onEnvia=(e)=>{
 
         e.preventDefault();
-        let numero=parseInt(e.target.value);
-        
-        if(e.target.value==='...'){
-            alert('Seleccione una moneda');
-        }
-        else{
-            setAcumAhorro(ahorrado)
-            setcantidad(cantidad+1);
+                
+        setAcumAhorro(ahorrado)
+        setcantidad(cantidad+1);
 
-            if(numeros===50){
-                setcincuenta(cincuenta+1);
-            }
-            else if(numeros===100){
-                setcien(cien+1);
-            }
-            else if(numeros === 200){
-                setdocientos(docientos+1);
-            }
-            else if(numeros === 500){
-                setquinientos(quinientos+1);
-            }
-            else if(numeros===1000){
-                setmil(mil+1);
-            }
+        if(numeros===50){
+            setcincuenta(cincuenta+1);
         }
-        
-                                     
+        else if(numeros===100){
+            setcien(cien+1);
+        }
+        else if(numeros === 200){
+            setdocientos(docientos+1);
+        }
+        else if(numeros === 500){
+            setquinientos(quinientos+1);
+        }
+        else if(numeros===1000){
+            setmil(mil+1);
+        }
+                               
     }
                        
         
@@ -84,8 +77,8 @@ const IngresaMoneda = () => {
             <label className='form-label'>Selecciona Moneda para ahorro: </label>
             <div className='row'>
                 <div className='col sm'>
-                <select className='form-select' onChange={onEventChange}>
-                    <option key='0' value='...'></option>
+                <select className='form-select' onChange={onEventChange} required>
+                    <option key='0' value={0}></option>
                     {
                         monedas.map(money=>(<option key={money} value={money}>{money}</option>))
                     }
@@ -98,7 +91,7 @@ const IngresaMoneda = () => {
             
         </form>
         <hr/>
-        <DataAhorro cantidad={cantidad} acumulado={AcumAhorro} CMonedas={CantidaMonedas}/>
+        <DataAhorro cantidad={cantidad} acumulado={AcumAhorro} CMonedas={CantidaMonedas} monedas={monedas}/>
     </Fragment>
   )
 };
