@@ -15,8 +15,8 @@ import React from 'react'
             <div className="collapse" id="Targetcollapse">
               <div className="contenedor">
                 <ul>
-                  <li>Cantidad Ahorrada: ${acumulado} pesos</li>
-                  <li>Cantidad Monedas: {cantidad}</li>
+                  <li><strong>Ahorro Total:</strong> ${acumulado} pesos</li>
+                  <li><strong>Cantidad Monedas:</strong> {cantidad}</li>
                 </ul>
             </div>
           </div>
@@ -34,7 +34,7 @@ import React from 'react'
                   {
                     monedas.map((val,i)=>(
                 
-                      <li key={val}>Monedas de {val}: {CMonedas[i]} monedas.</li>
+                      <li key={val}><strong>Monedas de {val}:</strong> {CMonedas[i]} monedas.</li>
                     ))           
                   }                
                 </ul>
@@ -55,7 +55,7 @@ import React from 'react'
                   {
                     monedas.map((val,i)=>(
                 
-                      <li key={val}>Dinero en Monedas de {val}: {val*CMonedas[i]} pesos.</li>
+                      <li key={val}><strong>Dinero en Monedas de {val}:</strong> {val*CMonedas[i]} pesos.</li>
                     ))           
                   }                
                 </ul>

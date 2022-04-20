@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import '../index.css';
 import DataAhorro from './DataAhorro';
+import swal from 'sweetalert';
 
 
 
@@ -9,10 +10,11 @@ const IngresaMoneda = () => {
     const monedas =[50,100,200,500,1000];
     
     const [numeros, setnumeros] = useState(0);
-    const [value, setvalue] =useState(0);
+    
     const [ahorrado, setahorrado] = useState(0);
     const [cantidad, setcantidad] = useState(0);
     const [AcumAhorro, setAcumAhorro] = useState(0);
+    
     
     const [cincuenta, setcincuenta] = useState(0);
     const [cien, setcien] = useState(0);
@@ -28,7 +30,15 @@ const IngresaMoneda = () => {
         let numero=parseInt(e.target.value);
         
         if(numero===0){
-            alert('Seleccione una moneda');
+            swal(
+                {
+                    title:'Error!',
+                    text:'Por Favor Seleccione una Moneda',
+                    icon:'error',
+                    button:'Aceptar',
+                    
+                }
+            );
         }
         
         else{
@@ -46,10 +56,20 @@ const IngresaMoneda = () => {
     const onEnvia=(e)=>{
 
         e.preventDefault();
-        console.log(numeros);
         
+        // controlamos el envio sin informacion por el usuario
         if(numeros===0){
-            alert('Seleccione una moneda');
+
+            swal(
+                {
+                    title:'Error!',
+                    text:'Por Favor Seleccione una Moneda',
+                    icon:'error',
+                    button:'Aceptar',
+                    
+                }
+            );
+            
         }
         
         else{
@@ -78,13 +98,12 @@ const IngresaMoneda = () => {
                                
     }
                        
-        
-
-  
+      
     return (
     <Fragment>
-        
+                        
         <form className='formulario' onSubmit={onEnvia}>
+            
             <label className='form-label'>Selecciona Moneda para ahorro: </label>
             <div className='row'>
                 <div className='col sm'>

@@ -10,13 +10,11 @@ const AlcanciaApp = () => {
         <Fragment>
             <div className='header'>
                 <img alt='logoApp' src='./Icono.png'/>
-                
-            </div>
-            <h4 className='titulo'>
+                <h4 className='titulo'>
                     Alcancia App
-            </h4>
-            <hr/>
-            
+                </h4>
+            </div>
+                                    
             <IngresaMoneda/>
                         
         </Fragment>
