@@ -8,7 +8,7 @@ import React from 'react'
     <div>
       <div className='card'>
           <div className='card-body'>
-            <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#Targetcollapse" aria-expanded="false" aria-controls="Targetcollapse">
+            <button className="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#Targetcollapse" aria-expanded="false" aria-controls="Targetcollapse">
               Detalle Ahorro
             </button>
           
@@ -24,7 +24,7 @@ import React from 'react'
       </div>
       <div className='card'>
           <div className='card-body'>
-            <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#Monedacollapse" aria-expanded="false" aria-controls="Monedacollapse">
+            <button className="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#Monedacollapse" aria-expanded="false" aria-controls="Monedacollapse">
               Detalle Monedas
             </button>
           
@@ -45,7 +45,7 @@ import React from 'react'
 
       <div className='card'>
           <div className='card-body'>
-            <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#Cantidadcollapse" aria-expanded="false" aria-controls="Cantidadcollapse">
+            <button className="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#Cantidadcollapse" aria-expanded="false" aria-controls="Cantidadcollapse">
               Detalle Cantidad por Monedas
             </button>
           
@@ -55,7 +55,7 @@ import React from 'react'
                   {
                     monedas.map((val,i)=>(
                 
-                      <li key={val}><strong>Dinero en Monedas de {val}:</strong> {val*CMonedas[i]} pesos.</li>
+                      <li key={val}><strong>Dinero en Monedas de {val}:</strong> ${val*CMonedas[i]} pesos.</li>
                     ))           
                   }                
                 </ul>

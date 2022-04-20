@@ -1,15 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import AlcanciaApp from './AlcanciaApp';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 
-const root = document.querySelector('#base'); 
+const root = createRoot(document.querySelector('#base')); 
 
-ReactDOM.render(
+root.render(
     <AlcanciaApp/>
-    ,root
 );
 
 reportWebVitals();

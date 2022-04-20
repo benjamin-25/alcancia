@@ -108,7 +108,7 @@ const IngresaMoneda = () => {
             <div className='row'>
                 <div className='col sm'>
                 <select value={numeros} className='form-select' onChange={onEventChange}>
-                    <option key='0'>selecciona</option>
+                    <option className="defecto" key='0'>Selecciona...</option>
                     {
                         monedas.map(money=>(<option key={money} value={money}>{money}</option>))
                     }
